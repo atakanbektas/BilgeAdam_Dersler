@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailYazdirma", "MailYazdirm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KullaniciAdiSifre", "KullaniciAdiSifre\KullaniciAdiSifre.csproj", "{DE9F33E4-5F31-4352-A558-E8070AA09005}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesapMakinesi", "HesapMakinesi\HesapMakinesi.csproj", "{1BC8748D-1936-4D45-85AE-98CE501DF27E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DE9F33E4-5F31-4352-A558-E8070AA09005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE9F33E4-5F31-4352-A558-E8070AA09005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE9F33E4-5F31-4352-A558-E8070AA09005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC8748D-1936-4D45-85AE-98CE501DF27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC8748D-1936-4D45-85AE-98CE501DF27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC8748D-1936-4D45-85AE-98CE501DF27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC8748D-1936-4D45-85AE-98CE501DF27E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
