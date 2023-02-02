@@ -17,9 +17,13 @@ namespace HesapMakinesi
             InitializeComponent();
         }
 
+        Random rnd = new Random();
+
         private void button1_Click(object sender, EventArgs e)
         {
-            lblScreen.Text = (Convert.ToInt32(txtSayi1.Text) + Convert.ToInt32(txtSayi2.Text)).ToString();
+            lblScreen.Text = (Convert.ToInt32(txtSayi1.Text) + Convert.ToInt32(txtSayi2.Text)).ToString();          
+               
+           
         }
 
         private void btnCikart_Click(object sender, EventArgs e)
@@ -57,6 +61,20 @@ namespace HesapMakinesi
         {
             txtSayi2.Text = "";
             lblScreen.Text = "";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            tmrLight.Start();
+            
+        }
+
+        private void tmrLight_Tick(object sender, EventArgs e)
+        {
+            int i = rnd.Next(200, 255);
+            int j = rnd.Next(200, 255);
+            int k = rnd.Next(200, 255);
+            label1.ForeColor = Color.FromArgb(i, j, k);
         }
     }
 }

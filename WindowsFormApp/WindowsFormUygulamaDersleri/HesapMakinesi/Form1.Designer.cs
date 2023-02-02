@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtSayi1 = new System.Windows.Forms.TextBox();
             this.txtSayi2 = new System.Windows.Forms.TextBox();
             this.lblScreen = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.btnCarp = new System.Windows.Forms.Button();
             this.btnBol = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.tmrLight = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtSayi1
@@ -139,6 +141,10 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "HESAP MAKİNESİ";
             // 
+            // tmrLight
+            // 
+            this.tmrLight.Tick += new System.EventHandler(this.tmrLight_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -157,6 +163,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Hesap Makinesi Uygulaması";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +179,7 @@
         private System.Windows.Forms.Button btnCarp;
         private System.Windows.Forms.Button btnBol;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer tmrLight;
     }
 }
 
