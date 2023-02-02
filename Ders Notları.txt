@@ -1,0 +1,16 @@
+01.02.2023 Windows Form Uygulamaları
+01.02.2023
+Label, Button, Textbox, Combobox, Checkbox, Listbox, Groupbox, RadioButton, ListViewItem
+Visible,Text,AutoSize,ForeColor,BackColor,Item.Add,
+NOT : RadioButton aynı groupbox da ise yalnızca bir tanesi select edilebilir.
+
+Uygulamalar = Form Kullanıcı adı şifre kontrol textbox checkbox label vb.. kullanımlar.
+
+-----------------------------------------------------------------------------------------
+
+02.02.2023 Windows Form Uygulamaları
+02.02.2023
+ListBox 
+
+
+
