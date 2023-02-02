@@ -65,8 +65,7 @@ namespace HesapMakinesi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tmrLight.Start();
-            
+            tmrLight.Start();           
         }
 
         private void tmrLight_Tick(object sender, EventArgs e)
