@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class", "Class\Class.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryPlaka", "DictionaryPlaka\DictionaryPlaka.csproj", "{B103909F-9EDC-4760-A903-17CFE3F62E62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetinIcindeGolDenizBulma", "MetinIcindeGolDenizBulma\MetinIcindeGolDenizBulma.csproj", "{AD952DC8-E61F-406A-B1FF-FA5BBBAA0310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListeEnBüyük", "..\..\..\WindowsFormApp\WindowsFormUygulamaDersleri\ListeEnBüyük\ListeEnBüyük.csproj", "{61C2A170-1B77-4757-96EA-B9D929770E66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{B103909F-9EDC-4760-A903-17CFE3F62E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B103909F-9EDC-4760-A903-17CFE3F62E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B103909F-9EDC-4760-A903-17CFE3F62E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD952DC8-E61F-406A-B1FF-FA5BBBAA0310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD952DC8-E61F-406A-B1FF-FA5BBBAA0310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD952DC8-E61F-406A-B1FF-FA5BBBAA0310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD952DC8-E61F-406A-B1FF-FA5BBBAA0310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C2A170-1B77-4757-96EA-B9D929770E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C2A170-1B77-4757-96EA-B9D929770E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C2A170-1B77-4757-96EA-B9D929770E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C2A170-1B77-4757-96EA-B9D929770E66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
