@@ -35,34 +35,38 @@
             this.btnGüncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.lstListe = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnGuncel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(48, 37);
+            this.txtAd.Location = new System.Drawing.Point(80, 12);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(140, 26);
             this.txtAd.TabIndex = 0;
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(48, 84);
+            this.txtSoyad.Location = new System.Drawing.Point(80, 61);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(140, 26);
             this.txtSoyad.TabIndex = 0;
             // 
             // txtSehir
             // 
-            this.txtSehir.Location = new System.Drawing.Point(48, 136);
+            this.txtSehir.Location = new System.Drawing.Point(80, 110);
             this.txtSehir.Name = "txtSehir";
             this.txtSehir.Size = new System.Drawing.Size(140, 26);
             this.txtSehir.TabIndex = 0;
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(29, 205);
+            this.btnEkle.Location = new System.Drawing.Point(11, 151);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(138, 38);
+            this.btnEkle.Size = new System.Drawing.Size(208, 38);
             this.btnEkle.TabIndex = 1;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -70,21 +74,21 @@
             // 
             // btnGüncelle
             // 
-            this.btnGüncelle.Location = new System.Drawing.Point(131, 263);
+            this.btnGüncelle.Location = new System.Drawing.Point(13, 239);
             this.btnGüncelle.Name = "btnGüncelle";
-            this.btnGüncelle.Size = new System.Drawing.Size(96, 38);
+            this.btnGüncelle.Size = new System.Drawing.Size(208, 38);
             this.btnGüncelle.TabIndex = 1;
-            this.btnGüncelle.Text = "güncelle";
+            this.btnGüncelle.Text = "Güncelle ve Sona Ekle";
             this.btnGüncelle.UseVisualStyleBackColor = true;
             this.btnGüncelle.Click += new System.EventHandler(this.btnGüncelle_Click);
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(29, 263);
+            this.btnSil.Location = new System.Drawing.Point(13, 283);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(96, 38);
+            this.btnSil.Size = new System.Drawing.Size(208, 38);
             this.btnSil.TabIndex = 1;
-            this.btnSil.Text = "sil";
+            this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
@@ -92,16 +96,57 @@
             // 
             this.lstListe.FormattingEnabled = true;
             this.lstListe.ItemHeight = 20;
-            this.lstListe.Location = new System.Drawing.Point(295, 37);
+            this.lstListe.Location = new System.Drawing.Point(243, 12);
             this.lstListe.Name = "lstListe";
-            this.lstListe.Size = new System.Drawing.Size(243, 264);
+            this.lstListe.Size = new System.Drawing.Size(393, 304);
             this.lstListe.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(-25, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 26);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "ADI:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(-25, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 26);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "SOYADI:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(-25, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 26);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "ŞEHRİ:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnGuncel
+            // 
+            this.btnGuncel.Location = new System.Drawing.Point(13, 195);
+            this.btnGuncel.Name = "btnGuncel";
+            this.btnGuncel.Size = new System.Drawing.Size(207, 38);
+            this.btnGuncel.TabIndex = 4;
+            this.btnGuncel.Text = "Güncelle";
+            this.btnGuncel.UseVisualStyleBackColor = true;
+            this.btnGuncel.Click += new System.EventHandler(this.btnGuncel_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 348);
+            this.ClientSize = new System.Drawing.Size(648, 352);
+            this.Controls.Add(this.btnGuncel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lstListe);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGüncelle);
@@ -127,6 +172,10 @@
         private System.Windows.Forms.Button btnGüncelle;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.ListBox lstListe;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnGuncel;
     }
 }
 
