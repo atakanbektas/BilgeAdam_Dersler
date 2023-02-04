@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveMethod", "Recursiv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintArrayWithMethods", "PrintArrayWithMethods\PrintArrayWithMethods.csproj", "{FB483F4E-C67C-4516-A1B6-80D9C816C260}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumsMethod", "SumsMethod\SumsMethod.csproj", "{F5E542A8-1069-4665-99CE-066445E91D4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FB483F4E-C67C-4516-A1B6-80D9C816C260}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB483F4E-C67C-4516-A1B6-80D9C816C260}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB483F4E-C67C-4516-A1B6-80D9C816C260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E542A8-1069-4665-99CE-066445E91D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E542A8-1069-4665-99CE-066445E91D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E542A8-1069-4665-99CE-066445E91D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E542A8-1069-4665-99CE-066445E91D4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
