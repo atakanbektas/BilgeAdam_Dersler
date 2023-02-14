@@ -24,13 +24,16 @@ namespace SinavNot
 
         void NotVeAdIste()
         {
+            ad = String.Empty;
             string[] isimListesi = txtAd.Text.Split(' ');
             foreach (var item in isimListesi)
             {
-               ad += item.First().ToString().ToUpper() + item.Substring(1).ToLower()+" ";
+                if (item != String.Empty)
+                {
+                    ad += item.First().ToString().ToUpper() + item.Substring(1).ToLower() + " ";
+                }
             }
 
-            //ad = txtAd.Text.First().ToString().ToUpper() + txtAd.Text.Substring(1).ToLower();
             soyad = txtSoyad.Text.ToUpper();
 
             not1Kontrol = int.TryParse(txtNot1.Text, out not1);
@@ -38,7 +41,7 @@ namespace SinavNot
             not3Kontrol = int.TryParse(txtNot3.Text, out not3);
 
             ort = ((double)(not1 + not2 + not3)) / 3;
-            ort = Math.Round(ort,2);
+            ort = Math.Round(ort, 2);
             adKontrol = ad.Any(char.IsDigit) || ad.Any(char.IsPunctuation);
             soyadKontrol = soyad.Any(char.IsDigit) || soyad.Any(char.IsPunctuation);
 

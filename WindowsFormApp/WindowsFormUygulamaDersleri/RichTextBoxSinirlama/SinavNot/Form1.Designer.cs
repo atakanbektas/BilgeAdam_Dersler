@@ -98,35 +98,35 @@
             this.txtSoyad.Location = new System.Drawing.Point(139, 54);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(284, 32);
-            this.txtSoyad.TabIndex = 1;
+            this.txtSoyad.TabIndex = 2;
             // 
             // txtNot1
             // 
             this.txtNot1.Location = new System.Drawing.Point(139, 92);
             this.txtNot1.Name = "txtNot1";
             this.txtNot1.Size = new System.Drawing.Size(284, 32);
-            this.txtNot1.TabIndex = 1;
+            this.txtNot1.TabIndex = 3;
             // 
             // txtNot2
             // 
             this.txtNot2.Location = new System.Drawing.Point(139, 130);
             this.txtNot2.Name = "txtNot2";
             this.txtNot2.Size = new System.Drawing.Size(284, 32);
-            this.txtNot2.TabIndex = 1;
+            this.txtNot2.TabIndex = 4;
             // 
             // txtNot3
             // 
             this.txtNot3.Location = new System.Drawing.Point(139, 168);
             this.txtNot3.Name = "txtNot3";
             this.txtNot3.Size = new System.Drawing.Size(284, 32);
-            this.txtNot3.TabIndex = 1;
+            this.txtNot3.TabIndex = 5;
             // 
             // btnKontrol
             // 
             this.btnKontrol.Location = new System.Drawing.Point(139, 206);
             this.btnKontrol.Name = "btnKontrol";
             this.btnKontrol.Size = new System.Drawing.Size(284, 48);
-            this.btnKontrol.TabIndex = 2;
+            this.btnKontrol.TabIndex = 6;
             this.btnKontrol.Text = "Kontrol Et";
             this.btnKontrol.UseVisualStyleBackColor = true;
             this.btnKontrol.Click += new System.EventHandler(this.btnKontrol_Click);
