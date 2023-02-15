@@ -1,6 +1,6 @@
 ﻿namespace WFA_RandomSifre
 {
-    partial class SifreOlusturma
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -34,19 +34,19 @@
             this.chkRakam = new System.Windows.Forms.CheckBox();
             this.chkOzel = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numUzunluk = new System.Windows.Forms.NumericUpDown();
-            this.numSayi = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnUret = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numSayi = new System.Windows.Forms.NumericUpDown();
+            this.numUzunluk = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUzunluk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSayi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUzunluk)).BeginInit();
             this.SuspendLayout();
             // 
             // lstBox
             // 
-            this.lstBox.BackColor = System.Drawing.Color.White;
+            this.lstBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.lstBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.lstBox.FormattingEnabled = true;
             this.lstBox.ItemHeight = 20;
@@ -105,7 +105,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.groupBox1.Controls.Add(this.btnUret);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -123,6 +123,41 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
+            // btnUret
+            // 
+            this.btnUret.Location = new System.Drawing.Point(230, 336);
+            this.btnUret.Name = "btnUret";
+            this.btnUret.Size = new System.Drawing.Size(91, 60);
+            this.btnUret.TabIndex = 4;
+            this.btnUret.Text = "ÜRET";
+            this.btnUret.UseVisualStyleBackColor = true;
+            this.btnUret.Click += new System.EventHandler(this.btnUret_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(89, 305);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Şifre Uzunluğu";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(118, 272);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 22);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Şifre Sayısı";
+            // 
+            // numSayi
+            // 
+            this.numSayi.Location = new System.Drawing.Point(230, 270);
+            this.numSayi.Name = "numSayi";
+            this.numSayi.Size = new System.Drawing.Size(91, 27);
+            this.numSayi.TabIndex = 2;
+            // 
             // numUzunluk
             // 
             this.numUzunluk.Location = new System.Drawing.Point(230, 303);
@@ -134,45 +169,8 @@
             this.numUzunluk.Name = "numUzunluk";
             this.numUzunluk.Size = new System.Drawing.Size(91, 27);
             this.numUzunluk.TabIndex = 2;
-            this.numUzunluk.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numSayi
-            // 
-            this.numSayi.Location = new System.Drawing.Point(230, 270);
-            this.numSayi.Name = "numSayi";
-            this.numSayi.Size = new System.Drawing.Size(91, 27);
-            this.numSayi.TabIndex = 2;
-            this.numSayi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 272);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 22);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Şifre Sayısı";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 305);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Şifre Uzunluğu";
-            // 
-            // btnUret
-            // 
-            this.btnUret.Location = new System.Drawing.Point(230, 336);
-            this.btnUret.Name = "btnUret";
-            this.btnUret.Size = new System.Drawing.Size(91, 60);
-            this.btnUret.TabIndex = 4;
-            this.btnUret.Text = "ÜRET";
-            this.btnUret.UseVisualStyleBackColor = true;
-            this.btnUret.Click += new System.EventHandler(this.btnUret_Click);
-            // 
-            // SifreOlusturma
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,12 +180,12 @@
             this.Controls.Add(this.lstBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.Name = "SifreOlusturma";
+            this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUzunluk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSayi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUzunluk)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WFA_RandomSifre
 {
-    public partial class SifreOlusturma : Form
+    internal partial class Form1 : Form
     {
-        public SifreOlusturma()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -65,17 +65,19 @@ namespace WFA_RandomSifre
         }
         void SifreOlusturEkle()
         {
+            lstBox.Items.Clear();
 
             for (int i = 0; i < numSayi.Value; i++)
             {
-                sifre = string.Empty;
                 for (int j = 0; j < numUzunluk.Value; j++)
                 {
                     RandomIndexAl();
                     sifre += Convert.ToChar(ASCII[randomIndex]);
                 }
-                lstBox.Items.Add(sifre);
+                lstBox.Items.Add($"{i+1}-)    {sifre}");
+                sifre = string.Empty;
             }
+            ASCII.Clear();
         }       
     }
 }
