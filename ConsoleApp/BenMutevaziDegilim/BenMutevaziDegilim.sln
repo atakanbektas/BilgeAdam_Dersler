@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenMutevaziDegilim", "BenMu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassFirin", "..\ClassFirin\ClassFirin.csproj", "{6F39238D-873B-4339-AB59-7C1054A8FAB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassToplama", "ClassToplama\ClassToplama.csproj", "{888FB7C9-E28C-4BFB-9341-272DC84E60AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6F39238D-873B-4339-AB59-7C1054A8FAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F39238D-873B-4339-AB59-7C1054A8FAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F39238D-873B-4339-AB59-7C1054A8FAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888FB7C9-E28C-4BFB-9341-272DC84E60AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888FB7C9-E28C-4BFB-9341-272DC84E60AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888FB7C9-E28C-4BFB-9341-272DC84E60AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888FB7C9-E28C-4BFB-9341-272DC84E60AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{888FB7C9-E28C-4BFB-9341-272DC84E60AA}</ProjectGuid>
+    <ProjectGuid>{12597ED7-608A-4E61-A79D-B232583A3BAA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ClassToplama</RootNamespace>
-    <AssemblyName>ClassToplama</AssemblyName>
+    <RootNamespace>ClassKullanici</RootNamespace>
+    <AssemblyName>ClassKullanici</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parola.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Toplama.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

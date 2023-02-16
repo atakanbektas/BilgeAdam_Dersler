@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{888FB7C9-E28C-4BFB-9341-272DC84E60AA}</ProjectGuid>
+    <ProjectGuid>{D79E8AFF-C20F-4008-A276-4DA46D9B31B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ClassToplama</RootNamespace>
-    <AssemblyName>ClassToplama</AssemblyName>
+    <RootNamespace>ClassKDV</RootNamespace>
+    <AssemblyName>ClassKDV</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Toplama.cs" />
+    <Compile Include="Urun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
