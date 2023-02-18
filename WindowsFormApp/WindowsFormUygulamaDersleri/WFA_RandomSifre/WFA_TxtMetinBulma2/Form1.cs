@@ -12,19 +12,22 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace WFA_TxtMetinBulma2
 {
+    
     public partial class Form1 : Form
     {
+
         public Form1()
+
         {
             InitializeComponent();
         }
 
         private string dosyaYolu;
         List<string> list;
-        
+
         private void btnAra_Click(object sender, EventArgs e)
         {
-            
+
             StringListesiOlustur();
             SecilenKelimeleriBoya();
         }
@@ -42,7 +45,7 @@ namespace WFA_TxtMetinBulma2
         }
         private void StringListesiOlustur()
         {
-            
+
             string[] dizi = rtxtMetin.Text.Split(' ');
             list = new List<string>();
             list.AddRange(dizi);
@@ -56,13 +59,16 @@ namespace WFA_TxtMetinBulma2
                 {
                     rtxtMetin.SelectionColor = Color.White;
                     rtxtMetin.SelectionBackColor = Color.DarkGreen;
-                }              
+                }
                 rtxtMetin.AppendText(word);
                 rtxtMetin.SelectionColor = Color.Black;
                 rtxtMetin.SelectionBackColor = Color.Transparent;
                 rtxtMetin.AppendText(" ");
 
+
+
             }
-        }        
+
+        }
     }
 }

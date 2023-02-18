@@ -74,10 +74,10 @@ namespace WFA_RandomSifre
                     RandomIndexAl();
                     sifre += Convert.ToChar(ASCII[randomIndex]);
                 }
-                lstBox.Items.Add($"{i+1}-)    {sifre}");
+                lstBox.Items.Add($"{i + 1}-)    {sifre}");
                 sifre = string.Empty;
             }
             ASCII.Clear();
-        }       
+        }
     }
 }
