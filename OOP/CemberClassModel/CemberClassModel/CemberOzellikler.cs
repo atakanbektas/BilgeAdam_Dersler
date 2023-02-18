@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace CemberClassModel
 {
-    public partial class Form1 : Form
+    public partial class CemberOzellikler : Form
+        
     {
-        public Form1()
+
+        public CemberOzellikler()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void CemberOzellikler_Load(object sender, EventArgs e)
         {
 
         }
