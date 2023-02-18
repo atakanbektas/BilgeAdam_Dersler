@@ -11,17 +11,19 @@ using System.Windows.Forms;
 namespace CemberClassModel
 {
     public partial class CemberOzellikler : Form
-        
+
     {
 
         public CemberOzellikler()
         {
             InitializeComponent();
         }
+        
+        
 
         private void CemberOzellikler_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

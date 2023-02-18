@@ -63,6 +63,16 @@ namespace CemberClassModel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backBlack {
+            get {
+                object obj = ResourceManager.GetObject("backBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cemberPng {
             get {
                 object obj = ResourceManager.GetObject("cemberPng", resourceCulture);
