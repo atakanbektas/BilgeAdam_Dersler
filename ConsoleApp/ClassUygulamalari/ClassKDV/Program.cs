@@ -11,8 +11,8 @@ namespace ClassKDV
         static void Main(string[] args)
         {
             Urun urun = new Urun(100m);
-            Console.WriteLine("Urun fiyatı = "+ Math.Round(urun.Fiyat)+"$");
-            Console.WriteLine("Kdv'li fiyatı = "+ urun.KdvFiyati+"$");
+            Console.WriteLine("Urun fiyatı = "+ urun.Fiyat+"$");
+            Console.WriteLine("Kdv'li fiyatı = "+ urun.KdvFiyati+" $");
 
             Console.ReadKey();
         }
