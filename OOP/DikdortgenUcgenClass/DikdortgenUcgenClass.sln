@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DikdortgenUcgenClass", "DikdortgenUcgenClass\DikdortgenUcgenClass.csproj", "{1C09BB11-42EC-4A25-A1F9-5146D7BABDB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C09BB11-42EC-4A25-A1F9-5146D7BABDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C09BB11-42EC-4A25-A1F9-5146D7BABDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C09BB11-42EC-4A25-A1F9-5146D7BABDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C09BB11-42EC-4A25-A1F9-5146D7BABDB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06B69D45-25B4-40C1-81E2-B935C90E4338}
+	EndGlobalSection
+EndGlobal
