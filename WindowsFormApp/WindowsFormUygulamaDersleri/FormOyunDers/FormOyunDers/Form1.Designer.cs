@@ -118,6 +118,7 @@
             this.lblFinish.TabIndex = 7;
             this.lblFinish.Text = "FINISH";
             this.lblFinish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFinish.Click += new System.EventHandler(this.lblFinish_Click);
             // 
             // pnlBox
             // 

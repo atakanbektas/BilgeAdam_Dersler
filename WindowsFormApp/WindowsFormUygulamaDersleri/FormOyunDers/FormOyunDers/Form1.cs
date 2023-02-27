@@ -97,5 +97,10 @@ namespace FormOyunDers
         {
             pnlBox.Top -= 10;
         }
+
+        private void lblFinish_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
