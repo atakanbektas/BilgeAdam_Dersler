@@ -10,11 +10,12 @@ namespace DikdortgenUcgenClass
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine(new Ucgen().Ciz() + "\n\n\n\n");
-            Console.WriteLine(new Dikdörtgen().Ciz());
 
-            Console.WriteLine(2>>1);
+            CizimAraci dikdortgen1= new CizimAraci(new Dikdörtgen());
+            Console.WriteLine(dikdortgen1.Ciz());
+
+            CizimAraci ucgen1 = new CizimAraci(new Ucgen());
+            Console.WriteLine(ucgen1.Ciz());
            
             Console.ReadKey();
         }

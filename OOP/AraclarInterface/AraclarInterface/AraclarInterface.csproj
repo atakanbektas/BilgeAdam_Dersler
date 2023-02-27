@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C09BB11-42EC-4A25-A1F9-5146D7BABDB3}</ProjectGuid>
+    <ProjectGuid>{A6FA9CDB-296C-4FD5-8ECF-E84CA63656C4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DikdortgenUcgenClass</RootNamespace>
-    <AssemblyName>DikdortgenUcgenClass</AssemblyName>
+    <RootNamespace>AraclarInterface</RootNamespace>
+    <AssemblyName>AraclarInterface</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CizimAraci.cs" />
-    <Compile Include="Dikdörtgen.cs" />
-    <Compile Include="IIslemYapilabilir.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Concrates\Araba.cs" />
+    <Compile Include="Concrates\Arac.cs" />
+    <Compile Include="Concrates\Gemi.cs" />
+    <Compile Include="Concrates\Abstract\IAracOzellikleri.cs" />
+    <Compile Include="Concrates\Abstract\IEylemler.cs" />
+    <Compile Include="Concrates\Abstract\IVitesDegistir.cs" />
+    <Compile Include="Concrates\Abstract\IYakitKasko.cs" />
+    <Compile Include="Concrates\Motorsiklet.cs" />
+    <Compile Include="Concrates\Otobus.cs" />
+    <Compile Include="Concrates\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ucgen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
