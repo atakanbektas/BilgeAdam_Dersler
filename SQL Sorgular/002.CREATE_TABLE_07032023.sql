@@ -51,7 +51,9 @@ INSERT INTO Siparisler(MusteriID,YemekSirketi,Urun,Adet,BirimFiyat) VALUES
 (1,'Burger King','Hamburger',3,100),
 (1,'Burger King','Pizza',4,50)
 
+
 CREATE DATABASE KursDB
+USE KursDB
 CREATE TABLE dbo.Ogrenciler
 (
 OgrenciID INT IDENTITY(1000,1) NOT NULL,
@@ -68,5 +70,31 @@ DersAdi NVARCHAR(50) NOT NULL
 CREATE TABLE dbo.OgrencilerDersler
 (
 OgrenciID INT NOT NULL,
-DersID INT NOT NULL
+DersID INT NOT NULL,
+PRIMARY KEY (OgrenciID,DersID),
+FOREIGN KEY (OgrenciID)
+REFERENCES dbo.Ogrenciler (OgrenciID),
+FOREIGN KEY (DersID)
+REFERENCES dbo.Dersler(DersID)
 );
+SELECT * FROM OgrencilerDersler
+INSERT INTO Ogrenciler(OgrenciAdi,OgrenciSoyadi) VALUES
+('Aykut','TERZÝ'),
+('Gokcehan','Gucuk'),
+('Mustafa','Tester'),
+('Fatih','BAGCIOGLU'),
+('Ilkiz','Burdamýyýz')
+INSERT INTO Dersler(DersAdi) VALUES
+('SQL'),
+('C#'),
+('OOP'),
+('Advanced OOP'),
+('CSS HTML'),
+('JavaScript'),
+('Entity Framework'),
+('MVC'),
+('CODEORG'),
+('Windows Form')
+SELECT * FROM Dersler
+
+
