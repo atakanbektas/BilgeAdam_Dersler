@@ -1,37 +1,56 @@
 USE Northwind
---1-En çok satýþ yaptýðým müþterim hangisi
+--SORU1-En çok satýþ yaptýðým müþterim hangisi
 SELECT TOP 1  C.CustomerID,SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) 'Satis Miktari' FROM [Order Details] OD
 JOIN Orders O ON O.OrderID LIKE OD.OrderID
 JOIN Customers C ON C.CustomerID LIKE O.CustomerID
 GROUP BY C.CustomerID
 ORDER BY SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) DESC
 
---2-En çok hangi sipariþten para kazanmýþým?
+--SORU2-En çok hangi sipariþten para kazanmýþým?
 SELECT TOP 1 OD.OrderID,SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) 'Satis Miktari' FROM [Order Details] OD
 JOIN Orders O ON O.OrderID LIKE OD.OrderID
 JOIN Customers C ON C.CustomerID LIKE O.CustomerID
 GROUP BY OD.OrderID,OD.Quantity*OD.UnitPrice*(1-OD.Discount)
 ORDER BY SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) DESC
 
---3-2 ay önce yaptýðým satýþlarýnýn london þehrinde ki x ürünün satýþ miktari
--- FÝRMA SON SATIÞINI 1997 DE YAPTIÐINDAN AKTÝF DEÐÝL DÝYEBÝLÝRÝZ..
+
+--SORU3 -2 ay önce yaptýðým satýþlarýnýn london þehrinde ki x ürünün satýþ miktari
+-- 2 AY ÖNCE DEDÝÐÝ ÝÇÝN 60 GÜN ÖNCESÝNÝ ALDIK.. 60 > ... yapýlýrsa son 2 ay alýnýr... eðer günümüze göre hesaplayacaksan GETDATE() metodu kullanýlýr...
 SELECT P.ProductID,P.ProductName,SUM(OD.Quantity) 'Satýlan Urun Adedi' FROM Products P
 JOIN [Order Details] OD ON OD.ProductID = P.ProductID
 JOIN Orders O ON O.OrderID = OD.OrderID
-WHERE O.ShipCity LIKE 'London' AND P.ProductName = 'Chai' AND 60 > DATEDIFF(DAY,O.ShippedDate,GETDATE())
+WHERE O.ShipCity LIKE 'London' AND P.ProductName = 'Chai' AND 60 = DATEDIFF(DAY,O.ShippedDate,(SELECT MAX(O.ShippedDate) FROM Orders O))
 GROUP BY P.ProductID,P.ProductName
 
---4-son 2 yýl içinde en çok satýlan ürün ve en az satýlan ürün
---**********************************************************************
-SELECT P.ProductID,P.ProductName,SUM(OD.Quantity) 'Satýlan Urun Adedi' FROM Products P
+SELECT MAX(O.ShippedDate) FROM Orders O
+
+
+--SORU4-son 2 yýl içinde en çok satýlan ürün ve en az satýlan ürün
+SELECT TOP 1 P.ProductID,P.ProductName,SUM(OD.Quantity) 'Satýlan Urun Adedi' FROM Products P
 JOIN [Order Details] OD ON OD.ProductID = P.ProductID
 JOIN Orders O ON O.OrderID = OD.OrderID
+WHERE 720 > DATEDIFF(DAY,O.ShippedDate,(SELECT MAX(O.ShippedDate) FROM Orders O)) 
 GROUP BY P.ProductID,P.ProductName
-HAVING (SUM(OD.Quantity)=MIN(SUM(OD.Quantity)))
 ORDER BY 3
---*********************************************************************
+
+SELECT TOP 1 P.ProductID,P.ProductName,SUM(OD.Quantity) 'Satýlan Urun Adedi' FROM Products P
+JOIN [Order Details] OD ON OD.ProductID = P.ProductID
+JOIN Orders O ON O.OrderID = OD.OrderID
+WHERE 720 > DATEDIFF(DAY,O.ShippedDate,(SELECT MAX(O.ShippedDate) FROM Orders O)) 
+GROUP BY P.ProductID,P.ProductName
+ORDER BY 3 DESC
+
 --5-yýlýn çalýþaný kim en çok satýþ yapan
+SELECT TOP 1 E.EmployeeID,E.FirstName 'Yýlýn Çalýþaný',SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) '1 Yýlda Satýlan Ürünlerin Toplam Fiyatý' FROM Employees E
+JOIN Orders O ON O.EmployeeID = E.EmployeeID
+JOIN [Order Details] OD ON OD.OrderID = O.OrderID
+WHERE 365<DATEDIFF(DAY,O.ShippedDate,(SELECT MAX(ShippedDate) FROM Orders))
+GROUP BY E.EmployeeID,E.FirstName
+ORDER BY SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) DESC
+
 --6: Tedarikçi id si 1 ile 5 olan tedarikçilerden alýnan ürünlerin adýný ve stok sayýsýný gösteren sorgu.
+
+
 --7: Stok sayýsý kritik olan 10 ürünün tedarikçilerinin adýný yazdýrýn.
 --8:Esparta bölgesine gönderilen en çok 5 ürünü listele.
 --9: En çok ürün alan müþteriye satýþ yapan personeller kimdir listele.

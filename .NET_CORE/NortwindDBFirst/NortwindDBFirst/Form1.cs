@@ -9,10 +9,16 @@ namespace NortwindDBFirst
         {
             InitializeComponent();
             _db = new NorthwindContext();
-            var x = _db.Regions.ToList();
+            var customers = _db.Customers.ToList();
+            dgvTable.DataSource = customers;
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
         {
 
         }
