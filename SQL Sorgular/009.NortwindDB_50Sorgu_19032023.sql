@@ -16,14 +16,14 @@ ORDER BY SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) DESC
 
 
 --SORU3 -2 ay önce yaptýðým satýþlarýnýn london þehrinde ki x ürünün satýþ miktari
--- 2 AY ÖNCE DEDÝÐÝ ÝÇÝN 60 GÜN ÖNCESÝNÝ ALDIK.. 60 > ... yapýlýrsa son 2 ay alýnýr... eðer günümüze göre hesaplayacaksan GETDATE() metodu kullanýlýr...
-SELECT P.ProductID,P.ProductName,SUM(OD.Quantity) 'Satýlan Urun Adedi' FROM Products P
+SELECT P.ProductID,P.ProductName,SUM(OD.Quantity) 'Satýlan Urun Adedi(Son 2 ay hariç)' FROM Products P
 JOIN [Order Details] OD ON OD.ProductID = P.ProductID
 JOIN Orders O ON O.OrderID = OD.OrderID
-WHERE O.ShipCity LIKE 'London' AND P.ProductName = 'Chai' AND 60 = DATEDIFF(DAY,O.ShippedDate,(SELECT MAX(O.ShippedDate) FROM Orders O))
+WHERE O.ShipCity LIKE 'London' AND P.ProductName = 'Camembert Pierrot' AND  60 < DATEDIFF(DAY,O.ShippedDate,(SELECT MAX(O.ShippedDate) FROM Orders O))
 GROUP BY P.ProductID,P.ProductName
 
 SELECT MAX(O.ShippedDate) FROM Orders O
+
 
 
 --SORU4-son 2 yýl içinde en çok satýlan ürün ve en az satýlan ürün
@@ -89,6 +89,7 @@ GROUP BY C.CategoryID,C.CategoryName
 --11- Ship PostalCode'u sadece sayýlardan oluþmayan sipariþler
 SELECT ShipPostalCode FROM Orders
 WHERE ShipPostalCode  LIKE '%[^(0-9)]%'
+
 -- ^ bitwise xor, ^(0-9) dediðimizde 0-9 arasý sayýlardan farklý bir char var mý onu arýyor.. 
 --        1^0 = 1 ; 0^1 = 1; 0^0 = 0; 1^1 = 0;
 
@@ -125,31 +126,82 @@ WHERE CategoryID IN (1,3,5,7)
 ORDER BY LEN(P.ProductName)
 
 --18: 5 numaralý ürünü 2 numaralý kargocuya taþýtan müþterileri gösteriniz.
+SELECT C.CustomerID,C.CompanyName,S.ShipperID,OD.ProductID FROM Customers C
+JOIN Orders O ON O.CustomerID LIKE C.CustomerID
+JOIN Shippers S ON S.ShipperID LIKE O.ShipVia
+JOIN [Order Details] OD ON OD.OrderID LIKE O.OrderID
+WHERE S.ShipperID = 2 AND OD.ProductID = 5
 
 
 --19: Chai ürününü en çok alan müþterileri ve ödenen fiyatý azalan þekilde listeleyiniz.
+SELECT C.CustomerID,C.ContactName,SUM(OD.Quantity*OD.UnitPrice*(1-OD.Discount)) 'Odenen Fiyat ($)' FROM Customers C
+JOIN Orders O ON O.CustomerID LIKE C.CustomerID
+JOIN [Order Details] OD ON OD.OrderID LIKE O.OrderID
+JOIN Products P ON P.ProductID LIKE OD.ProductID
+WHERE P.ProductName LIKE '%chai%'
+GROUP BY C.CustomerID,C.ContactName
+ORDER BY 3 DESC
 
 --20:ürün adý cha ile baþlayan ve 4 harften oluþan ürünleri sorgusunu yazýnýz.
+SELECT * FROM Products P
+WHERE P.ProductName LIKE 'cha_'
 
 --21-Tekrar sipariþ etme seviyesi 25'ten fazla olan ürünlerden birim fiyatý en yüksek olan ilk 3 ürünün ürün adý ve birim fiyatýný gösterin
+SELECT TOP 3 P.ProductName, P.UnitPrice FROM Products P
+WHERE P.ReorderLevel > 25
+ORDER BY P.UnitPrice DESC
 
---22-sipariþ tarihi 01.01.1997 den önce olan sipariþlerden bölge bilgisi boþ olmayan ve ülkesi Meksika olan sipariþlerin sipariþ idsi tarihi ve ülkesini listeleyin
+
+--SORU 22) Sipariþ tarihi 01.01.1997 den önce olan sipariþlerden bölge bilgisi boþ olmayan ve ülkesi Meksika olan sipariþlerin sipariþ idsi tarihi ve ülkesini listeleyin.
+SELECT * FROM Orders O
+WHERE O.OrderDate < '1997-01-01' AND O.ShipRegion IS NOT NULL AND O.ShipCountry LIKE 'Mexico'
+-- Böyle bir Sipariþ yok.. Brezilya için aþaðýdaki Query'i çalýþtýrabilirsiniz.
+
+SELECT * FROM Orders O
+WHERE O.OrderDate < '1997-01-01' AND O.ShipRegion IS NOT NULL AND O.ShipCountry LIKE 'Brazil'
+
+
 
 --23-stoklarý 10 ve 50 arasýnda olan ürünlerin indirim yapýlmayanlarýnýn birim fiyatlarýný azdan çoða doðru listeleyin.
+SELECT DISTINCT P.ProductName, P.UnitPrice FROM Products P
+JOIN [Order Details] OD ON OD.ProductID = P.ProductID
+WHERE (P.UnitsInStock BETWEEN 10 AND 50) AND (OD.Discount>0)
+ORDER BY 2 ASC
+
 
 --24-4 numaralý kategoriye ait olan birim fiyatý 10'dan büyük olan ürünlerin ismini ve fiyatýný fiyat çoktan aza sýralanacak þekilde listeleyin
+SELECT DISTINCT P.ProductName,P.UnitPrice FROM Products P
+JOIN [Order Details] OD ON OD.ProductID LIKE P.ProductID
+WHERE P.CategoryID = 4 AND P.UnitPrice>10
+
 
 --25-müþteri ismi T ile baþlayan ve ülkesi USA olan müþterilerin müþteri ismi ve telefon numaralarýný listeleyin
+SELECT C.CompanyName,C.Phone FROM Customers C
+WHERE C.CompanyName LIKE 'T%' AND C.Country LIKE 'USA'
 
 --26-En çok sipariþ veren müþteri bilgileri listele
+SELECT TOP 1 C.CustomerID,C.CompanyName,C.ContactName, COUNT(*) 'Verilen Siparis (Adet)' FROM Orders O
+JOIN Customers C ON C.CustomerID = O.CustomerID
+GROUP BY C.CustomerID,C.CompanyName,C.ContactName
+ORDER BY 4 DESC
+
 
 --27-UnitPrice ý 15 ile 100 arasýnda olan, devam ettirilen ürünlerin adý ve fiyat bilgilerini fiyata göre artan sekilde sýralayýn
+SELECT P.ProductName,P.UnitPrice FROM Products P
+WHERE (P.UnitPrice BETWEEN 15 AND 100) AND (P.Discontinued = 0)
 
 --28-1 numaralý kargo ile Cork sehrine gönderilen veya taþýma ücreti 111 den küçük olanlarýn siparis tarihini ve gönderim tarihlerini listeleyin
+SELECT O.OrderDate,O.ShippedDate FROM Orders O
+WHERE (O.ShipVia = 1 AND O.ShipCity = 'Cork') OR (O.Freight<111)
 
---29-Tedarikci adýnýn 2. harfi a veya e olan ve sonu n veya s ile bitmeyenlerin listesi
+--29-Tedarikci adýnýn 2. harfi a veya e olan ve sonu n veya s ile bitmeyenlerin listesi.
+SELECT * FROM Suppliers S
+WHERE S.CompanyName LIKE '_[ae]%[^ns]'
 
 --30-Sales Representative  lerin ad ve soyadlarýný bir kolonda, iþe girisinden sonra geçen günü 'Geçen Gün' kolonunda gösterip sýralamayý geçen güne göre artan yapýn.
+SELECT E.FirstName+' '+E.LastName 'Ad Soyad',DATEDIFF(DAY,E.HireDate,GETDATE()) 'Geçen Gün' FROM Employees E
+WHERE E.Title LIKE 'Sales Representative'
+ORDER BY 2 ASC
 
 --31-personelleri yaþ sýralamasý yapýp 25ten büyük olanlarýn ünvan kolonu açýp usta küçükse çýrak yazsýn
 SELECT LastName, FirstName, BirthDate,
@@ -219,7 +271,7 @@ SELECT TOP 1  E.EmployeeID,E.FirstName,P.ProductName,OD.Quantity,P.Discontinued 
 JOIN Products P ON P.ProductID = OD.ProductID
 JOIN Orders O ON O.OrderID = OD.OrderID
 JOIN Employees E ON E.EmployeeID = O.EmployeeID
-WHERE DATEDIFF(DAY,O.OrderDate,(SELECT MAX(OrderDate) FROM Orders)) <= 30 AND E.EmployeeID = 2
+WHERE DATEDIFF(DAY,O.OrderDate,(SELECT MAX(OrderDate) FROM Orders)) <= 30 AND E.EmployeeID = 2 -- Bunu tespit edip, manuel yazdým. Subquery yaparakta çözülebilir.. :)
 ORDER BY 4 DESC
 
 --41-en fazla ürünü bulunan tedarikçinin kaç adet ürünü vardýr.
@@ -252,7 +304,7 @@ ORDER BY 3 DESC
 
 
 --45-Tedarikçi Id'si 1 olan ürünleri en çok sipariþ eden 3 müþteri
-SELECT  C.CustomerID,COUNT(*) FROM Customers C
+SELECT TOP 3 C.CustomerID,COUNT(*) FROM Customers C
 JOIN Orders O ON O.CustomerID = C.CustomerID
 JOIN [Order Details] OD ON OD.OrderID = O.OrderID
 JOIN Products P ON P.ProductID = OD.ProductID
