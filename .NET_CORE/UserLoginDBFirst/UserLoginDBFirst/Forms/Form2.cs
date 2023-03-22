@@ -16,5 +16,15 @@ namespace UserLoginDBFirst.Forms
         {
             InitializeComponent();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            dgvTable.DataSource = this.Db().Humans.ToList();
+        }
+
+        private void btnHomePage_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -47,7 +47,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(113, 13);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(413, 29);
             this.txtName.TabIndex = 0;
@@ -55,7 +55,7 @@
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(113, 56);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(413, 29);
             this.txtSurname.TabIndex = 0;
@@ -63,7 +63,7 @@
             // txtAge
             // 
             this.txtAge.Location = new System.Drawing.Point(113, 99);
-            this.txtAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAge.Margin = new System.Windows.Forms.Padding(4);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(413, 29);
             this.txtAge.TabIndex = 0;
@@ -71,7 +71,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(113, 142);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(413, 29);
             this.txtPhone.TabIndex = 0;
@@ -79,7 +79,7 @@
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(113, 185);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(413, 29);
             this.txtId.TabIndex = 0;
@@ -160,6 +160,7 @@
             this.btnSignUp.TabIndex = 2;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnHomePage
             // 
@@ -190,7 +191,7 @@
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtName);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SignUpPage";
             this.Text = "SignUpPage";
             this.ResumeLayout(false);

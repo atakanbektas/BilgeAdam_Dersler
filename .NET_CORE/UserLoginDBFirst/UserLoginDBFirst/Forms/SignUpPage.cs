@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserLoginDBFirst.Models;
 
 namespace UserLoginDBFirst.Forms
 {
@@ -15,6 +16,36 @@ namespace UserLoginDBFirst.Forms
         public SignUpPage()
         {
             InitializeComponent();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.ProfileId = txtId.Text;
+            profile.Password = txtPassword.Text;
+            Human human = new Human()
+            {
+                Name = txtName.Text,
+                Surname = txtSurname.Text,
+                Age = Convert.ToInt32(txtAge.Text),
+                Phone = Convert.ToInt64(txtPhone.Text)          
+            };
+            profile.Human = human;
+
+            try
+            {
+                this.Db().Profiles.Add(profile);
+                this.Db().SaveChanges();
+            }
+            catch 
+            {
+                this.Db().Profiles.Remove(profile);
+                MessageBox.Show("Failed","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+            }
+            
+            
+
         }
     }
 }
