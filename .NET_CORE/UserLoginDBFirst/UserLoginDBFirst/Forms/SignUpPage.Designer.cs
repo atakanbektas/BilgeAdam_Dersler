@@ -170,6 +170,7 @@
             this.btnHomePage.TabIndex = 3;
             this.btnHomePage.Text = "Home Page";
             this.btnHomePage.UseVisualStyleBackColor = true;
+            this.btnHomePage.Click += new System.EventHandler(this.btnHomePage_Click);
             // 
             // SignUpPage
             // 

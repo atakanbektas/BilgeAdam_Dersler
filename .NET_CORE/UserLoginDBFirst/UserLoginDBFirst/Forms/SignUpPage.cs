@@ -18,9 +18,11 @@ namespace UserLoginDBFirst.Forms
             InitializeComponent();
         }
 
+        Profile profile;
+
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile();
+            profile = new Profile();
             profile.ProfileId = txtId.Text;
             profile.Password = txtPassword.Text;
             Human human = new Human()
@@ -36,16 +38,21 @@ namespace UserLoginDBFirst.Forms
             {
                 this.Db().Profiles.Add(profile);
                 this.Db().SaveChanges();
+                MessageBox.Show("Hesap Oluşturuldu");
             }
             catch 
             {
                 this.Db().Profiles.Remove(profile);
                 MessageBox.Show("Failed","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
-
             }
             
             
 
+        }
+
+        private void btnHomePage_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

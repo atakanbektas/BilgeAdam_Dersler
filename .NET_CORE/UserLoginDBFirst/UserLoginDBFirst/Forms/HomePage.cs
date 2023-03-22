@@ -29,7 +29,6 @@ namespace UserLoginDBFirst.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {            
-
             var list = this.Db().Profiles.Where(prof => prof.ProfileId== txtId.Text).ToList();
             if (list.Count>0)
             {
@@ -43,20 +42,7 @@ namespace UserLoginDBFirst.Forms
             else
             {
                 MessageBox.Show("Kullanıcı Adı Hatalı");
-            }
-
-
-            //foreach (var item in this.Db().Profiles)
-            //{
-            //    if (item == profile)
-            //    {
-            //        isExist= true;
-            //    }
-            //}
-     
-            
-
-            
+            }             
         }
     }
 }
