@@ -30,14 +30,13 @@ namespace WFA_Linq.CustomDesigner
         public static void Cagir()
         {
             List<int> sayilar = new List<int> { 10, 22, 13, 44, 75 };
-
-            
             sayilar.MyWhere(CiftSayiMi);
         }
-
+        
         public static void Sil<T, R>(this ICollection<T> collection, Func<T, R> predict) 
         {
             ICollection<T> silinecekDatalar = new List<T>();
+
             foreach (var item in collection)
             {
                 if(typeof(R) == typeof(bool))
@@ -52,6 +51,18 @@ namespace WFA_Linq.CustomDesigner
             {
                 collection.Remove(item);
             }
+        }
+        public static bool MyContains<T>(this ICollection<T> collection,T obj)
+        {
+            bool iceriyorMu = false;
+            foreach (T item in collection)
+            {
+                if (obj.Equals(item))
+                {
+                    iceriyorMu = true;
+                }
+            }
+            return iceriyorMu;
         }
     }
 }

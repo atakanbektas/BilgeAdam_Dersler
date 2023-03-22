@@ -18,6 +18,14 @@ namespace WFA_Linq
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            List<string> strings= new List<string>() { "atakan","ali","ozan","götçe"};
+            bool varMi = strings.MyContains("a");
+
+            if (varMi) MessageBox.Show("VAR");            
+            else MessageBox.Show("YOK");
+
+
+
 
         }
         private int GetLength(string str)
