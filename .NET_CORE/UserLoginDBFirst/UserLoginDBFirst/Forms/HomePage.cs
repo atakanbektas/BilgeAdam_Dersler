@@ -20,7 +20,7 @@ namespace UserLoginDBFirst.Forms
         }
 
         private void lnkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {            
+        {
 
             SignUpPage signUp = new SignUpPage();
             signUp.ShowDialog();
@@ -28,21 +28,26 @@ namespace UserLoginDBFirst.Forms
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {            
-            var list = this.Db().Profiles.Where(prof => prof.ProfileId== txtId.Text).ToList();
-            if (list.Count>0)
+        {
+            var list = this.Db().Profiles.Where(prof => prof.ProfileId == txtId.Text).ToList();
+            if (list.Count > 0)
             {
-                var list2 = this.Db().Profiles.Where(prof => prof.Password== txtPassword.Text).ToList();
-                if (list2.Count>0) 
+                var list2 = this.Db().Profiles.Where(prof => prof.Password == txtPassword.Text).ToList();
+                if (list2.Count == 0)
+                {
+                    MessageBox.Show("Hatalı Şifre Girdiniz!");
+                }
+                else
                 {
                     new Form2().ShowDialog();
-                }                
-                MessageBox.Show("Hatalı Şifre Girdiniz!");                
+                }              
             }
             else
             {
                 MessageBox.Show("Kullanıcı Adı Hatalı");
-            }             
+            }
         }
     }
 }
+
+
