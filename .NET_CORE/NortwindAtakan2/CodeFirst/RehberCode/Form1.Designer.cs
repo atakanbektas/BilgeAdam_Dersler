@@ -216,6 +216,7 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Rehber";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // dgvTable
             // 

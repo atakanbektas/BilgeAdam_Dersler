@@ -74,5 +74,9 @@ namespace RehberCode
             }
 
         }
+
+        private void label5_MouseEnter(object sender, EventArgs e)
+        {
+        }
     }
 }
