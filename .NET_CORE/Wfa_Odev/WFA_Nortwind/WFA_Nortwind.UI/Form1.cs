@@ -47,7 +47,7 @@ namespace WFA_Nortwind.UI
                 UrunAdi = urun.ProductName,
                 Fiyat = urun.UnitPrice,
                 StokMiktari = urun.UnitsInStock,
-                KategoriAdi = kategoriler.Where(kat => kat.CategoryId == urun.CategoryId).FirstOrDefault().CategoryName
+                KategoriAdi = urun.Category.CategoryName,
             }).ToList();
         }
 
@@ -75,11 +75,11 @@ namespace WFA_Nortwind.UI
 
             dgvTable.DataSource = siparisler.Select(siparis => new
             {
-                MüsteriSirketAdi = musteriler.Where(musteri => musteri.CustomerId == siparis.CustomerId).FirstOrDefault().CompanyName,
-                CalisanAdiSoyadi = calisanlar.Where(calisan => calisan.EmployeeId == siparis.EmployeeId).FirstOrDefault().FirstName + " " + calisanlar.Where(calisan => calisan.EmployeeId == siparis.EmployeeId).FirstOrDefault().LastName,
+                MusteriSirketAdi = siparis.Customer.CompanyName,
+                CalisanAdiSoyadi = $"{siparis.Employee.FirstName} {siparis.Employee.LastName}",
                 SiparisID = siparis.OrderId,
                 SiparisTarihi = siparis.OrderDate,
-                KargoSirketAdi = kargoSirketleri.Where(kargo => kargo.ShipperId == siparis.ShipVia).FirstOrDefault().CompanyName,
+                KargoSirketAdi = siparis.ShipViaNavigation.CompanyName,
             }).ToList();
         }
 
