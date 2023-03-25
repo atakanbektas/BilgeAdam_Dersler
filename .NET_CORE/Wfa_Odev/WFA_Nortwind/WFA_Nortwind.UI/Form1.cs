@@ -120,6 +120,7 @@ namespace WFA_Nortwind.UI
             dgvTable.DataSource = _db.Products.ToList();
         }
 
+
         /// <summary>
         ///  Çalýþanlarýn adýný, soyadýný, doðum tarihini ve yýl bazýnda yaþýný listeler.
         /// </summary>
@@ -138,29 +139,75 @@ namespace WFA_Nortwind.UI
             }).ToList();
         }
 
+
+        /// <summary>
+        /// Her bir kategorinin stoktaki toplam ürün miktarýný listeler.
+        /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Click</param>
         private void button9_Click(object sender, EventArgs e)
         {
             TiklamaAnimasyonu(sender);
+            var kategoriler = _db.Categories.ToList();
+            var urunler = _db.Products.ToList();
+            var stokGrup = urunler.
+                GroupBy(urun => urun.CategoryId).
+                Select(grup => new{ 
+                    KategoriAdi = kategoriler.First(kategori=>kategori.CategoryId==grup.Key).CategoryName,
+                    StokMiktari = grup.Sum(urun=>urun.UnitsInStock)           
+            }).OrderByDescending(stok=>stok.StokMiktari).ToList();
+
+            dgvTable.DataSource = stokGrup;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             TiklamaAnimasyonu(sender);
+            var urunler = _db.Products.ToList();
+            dgvTable.DataSource = urunler.OrderByDescending(urun => urun.ProductName).OrderByDescending(urun => urun.UnitsInStock).ToList();
+
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
             TiklamaAnimasyonu(sender);
+            var urunler = _db.Products.ToList();
+            var siparisDetaylari = _db.OrderDetails.GroupBy(detay => detay.OrderId).Select(grup => new
+            {
+                   OrderId = grup.Key,
+                   ToplamSatisTutari = grup.Sum(grup=>grup.Quantity*(1-grup.Discount)*Convert.ToDouble(grup.UnitPrice)),
+            }).Where(g=>g.ToplamSatisTutari<=500).OrderByDescending(g=>g.ToplamSatisTutari).ToList();
+            dgvTable.DataSource = siparisDetaylari;
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             TiklamaAnimasyonu(sender);
+            var urunler = _db.Products.ToList();
+            var kategoriler = _db.Categories.ToList();
+
+            dgvTable.DataSource = urunler.Select(urun => new
+            {
+                UrunAdi = urun.ProductName,
+                KategoriName = kategoriler.Where(kat=>kat.CategoryId == urun.CategoryId).First().CategoryName,
+            }).ToList();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+           
             TiklamaAnimasyonu(sender);
+            var urunler = _db.Products.ToList();
+            var kategoriler = _db.Categories.ToList();
+            var tedarikciler = _db.Suppliers.ToList();
+
+            dgvTable.DataSource = urunler.Select(urun => new
+            {
+                UrunAdi = urun.ProductName,
+                KategoriName = kategoriler.Where(kat => kat.CategoryId == urun.CategoryId).First()?.CategoryName,
+                TedarikciName = tedarikciler.Where(tedarikci => tedarikci.SupplierId == urun.SupplierId).FirstOrDefault()?.CompanyName,
+            }).ToList();
         }
     }
 }
