@@ -15,7 +15,10 @@ namespace WFA_MostPopularCities.Models
         public string? Name { get; set; }        
         public int? CityId  { get; set; }
         public City? City { get; set; }
-
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
 
     }
 }

@@ -26,6 +26,8 @@ namespace WFA_MostPopularCities
             Hide();
         }
 
+      
+
         public int GetId()
         {
             return id;

@@ -45,32 +45,33 @@
             // 
             // txtCityName
             // 
-            this.txtCityName.Location = new System.Drawing.Point(28, 50);
+            this.txtCityName.Location = new System.Drawing.Point(70, 50);
             this.txtCityName.Name = "txtCityName";
             this.txtCityName.Size = new System.Drawing.Size(230, 29);
             this.txtCityName.TabIndex = 0;
             // 
             // nudPlakaNum
             // 
-            this.nudPlakaNum.Location = new System.Drawing.Point(264, 50);
+            this.nudPlakaNum.Location = new System.Drawing.Point(306, 50);
             this.nudPlakaNum.Name = "nudPlakaNum";
             this.nudPlakaNum.Size = new System.Drawing.Size(55, 29);
             this.nudPlakaNum.TabIndex = 1;
             // 
             // btnAddCity
             // 
-            this.btnAddCity.Location = new System.Drawing.Point(325, 50);
+            this.btnAddCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAddCity.Location = new System.Drawing.Point(367, 50);
             this.btnAddCity.Name = "btnAddCity";
             this.btnAddCity.Size = new System.Drawing.Size(107, 29);
             this.btnAddCity.TabIndex = 2;
             this.btnAddCity.Text = "Ekle";
-            this.btnAddCity.UseVisualStyleBackColor = true;
+            this.btnAddCity.UseVisualStyleBackColor = false;
             this.btnAddCity.Click += new System.EventHandler(this.btnAddCity_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 26);
+            this.label1.Location = new System.Drawing.Point(147, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 21);
             this.label1.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(262, 0);
+            this.label2.Location = new System.Drawing.Point(304, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 47);
             this.label2.TabIndex = 3;
@@ -89,32 +90,33 @@
             // 
             this.lstPopularProduct.FormattingEnabled = true;
             this.lstPopularProduct.ItemHeight = 21;
-            this.lstPopularProduct.Location = new System.Drawing.Point(548, 120);
+            this.lstPopularProduct.Location = new System.Drawing.Point(682, 85);
             this.lstPopularProduct.Name = "lstPopularProduct";
-            this.lstPopularProduct.Size = new System.Drawing.Size(343, 298);
+            this.lstPopularProduct.Size = new System.Drawing.Size(400, 424);
             this.lstPopularProduct.TabIndex = 4;
             // 
             // btnDeletecCity
             // 
-            this.btnDeletecCity.Location = new System.Drawing.Point(325, 515);
+            this.btnDeletecCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDeletecCity.Location = new System.Drawing.Point(70, 515);
             this.btnDeletecCity.Name = "btnDeletecCity";
-            this.btnDeletecCity.Size = new System.Drawing.Size(107, 29);
+            this.btnDeletecCity.Size = new System.Drawing.Size(404, 29);
             this.btnDeletecCity.TabIndex = 2;
             this.btnDeletecCity.Text = "Sil";
-            this.btnDeletecCity.UseVisualStyleBackColor = true;
+            this.btnDeletecCity.UseVisualStyleBackColor = false;
             this.btnDeletecCity.Click += new System.EventHandler(this.btnDeletecCity_Click);
             // 
             // txtPopularProduct
             // 
-            this.txtPopularProduct.Location = new System.Drawing.Point(548, 85);
+            this.txtPopularProduct.Location = new System.Drawing.Point(682, 50);
             this.txtPopularProduct.Name = "txtPopularProduct";
-            this.txtPopularProduct.Size = new System.Drawing.Size(230, 29);
+            this.txtPopularProduct.Size = new System.Drawing.Size(287, 29);
             this.txtPopularProduct.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(595, 61);
+            this.label3.Location = new System.Drawing.Point(809, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 21);
             this.label3.TabIndex = 3;
@@ -122,37 +124,40 @@
             // 
             // btnOzellikEkle
             // 
-            this.btnOzellikEkle.Location = new System.Drawing.Point(781, 85);
+            this.btnOzellikEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnOzellikEkle.Location = new System.Drawing.Point(975, 50);
             this.btnOzellikEkle.Name = "btnOzellikEkle";
             this.btnOzellikEkle.Size = new System.Drawing.Size(107, 29);
             this.btnOzellikEkle.TabIndex = 2;
             this.btnOzellikEkle.Text = "Ekle";
-            this.btnOzellikEkle.UseVisualStyleBackColor = true;
+            this.btnOzellikEkle.UseVisualStyleBackColor = false;
             this.btnOzellikEkle.Click += new System.EventHandler(this.btnOzellikEkle_Click);
             // 
             // lstCities
             // 
             this.lstCities.FormattingEnabled = true;
             this.lstCities.ItemHeight = 21;
-            this.lstCities.Location = new System.Drawing.Point(28, 85);
+            this.lstCities.Location = new System.Drawing.Point(70, 85);
             this.lstCities.Name = "lstCities";
             this.lstCities.Size = new System.Drawing.Size(404, 424);
             this.lstCities.TabIndex = 4;
+            this.lstCities.SelectedIndexChanged += new System.EventHandler(this.lstCities_SelectedIndexChanged);
             // 
             // btnDeleteProduct
             // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(784, 515);
+            this.btnDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDeleteProduct.Location = new System.Drawing.Point(682, 514);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(107, 29);
+            this.btnDeleteProduct.Size = new System.Drawing.Size(400, 29);
             this.btnDeleteProduct.TabIndex = 2;
             this.btnDeleteProduct.Text = "Sil";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 602);
+            this.ClientSize = new System.Drawing.Size(1183, 626);
             this.Controls.Add(this.lstCities);
             this.Controls.Add(this.lstPopularProduct);
             this.Controls.Add(this.label2);

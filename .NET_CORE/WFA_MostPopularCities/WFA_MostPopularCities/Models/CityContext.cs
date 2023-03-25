@@ -21,7 +21,7 @@ namespace WFA_MostPopularCities.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-     => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=CityDB;TrustServerCertificate=True;uid=sa;pwd=sa;");
+     => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=CityDB;TrustServerCertificate=True;Trusted_Connection=True;");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
