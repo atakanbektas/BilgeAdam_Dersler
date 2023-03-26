@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlPhone = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,11 +45,10 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPhone.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPhone
@@ -69,6 +69,16 @@
             this.pnlPhone.Size = new System.Drawing.Size(576, 864);
             this.pnlPhone.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Wfa_KisiRehberi_DbFirst_EF.Properties.Resources.phone2;
+            this.pictureBox2.Location = new System.Drawing.Point(267, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // pnlSearch
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -81,23 +91,24 @@
             this.pnlSearch.Controls.Add(this.label1);
             this.pnlSearch.Controls.Add(this.txtName);
             this.pnlSearch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlSearch.Location = new System.Drawing.Point(53, 86);
+            this.pnlSearch.Location = new System.Drawing.Point(68, 86);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(447, 100);
+            this.pnlSearch.Size = new System.Drawing.Size(417, 100);
             this.pnlSearch.TabIndex = 2;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(269, 35);
+            this.txtSearch.Location = new System.Drawing.Point(232, 43);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(175, 23);
+            this.txtSearch.Size = new System.Drawing.Size(181, 23);
             this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tempus Sans ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(26, 65);
+            this.label3.Location = new System.Drawing.Point(4, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 16);
             this.label3.TabIndex = 1;
@@ -105,7 +116,7 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(127, 63);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(105, 63);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(121, 23);
             this.txtPhoneNumber.TabIndex = 0;
@@ -114,7 +125,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tempus Sans ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(66, 34);
+            this.label2.Location = new System.Drawing.Point(44, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 1;
@@ -122,7 +133,7 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(127, 32);
+            this.txtSurname.Location = new System.Drawing.Point(105, 32);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(121, 23);
             this.txtSurname.TabIndex = 0;
@@ -130,10 +141,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(329, 11);
+            this.label4.Font = new System.Drawing.Font("SimSun-ExtB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(287, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 21);
+            this.label4.Size = new System.Drawing.Size(69, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Search";
             // 
@@ -141,7 +152,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(82, 5);
+            this.label1.Location = new System.Drawing.Point(60, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 1;
@@ -149,20 +160,27 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(127, 3);
+            this.txtName.Location = new System.Drawing.Point(105, 3);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 23);
             this.txtName.TabIndex = 0;
             // 
             // dgvPhone
             // 
+            this.dgvPhone.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhone.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPhone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvPhone.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPhone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhone.Location = new System.Drawing.Point(50, 192);
+            this.dgvPhone.Location = new System.Drawing.Point(53, 232);
+            this.dgvPhone.MultiSelect = false;
             this.dgvPhone.Name = "dgvPhone";
+            this.dgvPhone.ReadOnly = true;
             this.dgvPhone.RowTemplate.Height = 25;
+            this.dgvPhone.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhone.Size = new System.Drawing.Size(447, 521);
             this.dgvPhone.TabIndex = 1;
+            this.dgvPhone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhone_CellClick);
             // 
             // btnAdd
             // 
@@ -178,7 +196,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -194,7 +212,7 @@
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -210,7 +228,7 @@
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShow
             // 
@@ -226,7 +244,7 @@
             this.btnShow.TabIndex = 0;
             this.btnShow.Text = "SHOW";
             this.btnShow.UseVisualStyleBackColor = false;
-            this.btnShow.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // btnExit
             // 
@@ -235,22 +253,12 @@
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(242, 692);
+            this.btnExit.Location = new System.Drawing.Point(249, 757);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(68, 61);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Wfa_KisiRehberi_DbFirst_EF.Properties.Resources.phone2;
-            this.pictureBox2.Location = new System.Drawing.Point(267, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -264,10 +272,10 @@
             this.Text = "My Phone";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlPhone.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
