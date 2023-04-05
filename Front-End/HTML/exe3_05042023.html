@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05.04.2023 Uygulama egzersiz 3</title>
+</head>
+
+<body>
+    <ul>
+        <li>Bilgisayar</li>
+
+        <ul>
+            <li>Masaüstü</li>
+            <li>Dizüstü</li>
+        </ul>
+
+        <li>Telefon</li>
+        <li>Kulaklık</li>
+
+
+    </ul>
+    <ol>
+        <li>Bilgisayar</li>
+        <ol>
+         <li>Masaüstü</li>
+         <li>Dizüstü</li>
+        </ol>
+        <li>Telefon</li>
+        <li>Kulaklık</li>
+    </ol>
+    
+    <ol type="i" start="3">
+        <li>Bilgisayar</li>
+        <li>Telefon</li>
+        <li>Kulaklık</li>
+    </ol>
+
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="filter">
+            <feTurbulence type="fractalNoise" baseFrequency=".02 .005"/>
+            <feComponentTransfer result="b">
+                <feFuncA type="table" tableValues="1 .7 0 .7 1"/>
+            </feComponentTransfer>
+            <feTurbulence type="fractalNoise" baseFrequency=".5" numOctaves="8"/>
+            <feBlend in="b"/>
+            <feDiffuseLighting lighting-color="#da5" surfaceScale="16">
+                <feDistantLight elevation="9"/>
+            </feDiffuseLighting>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#filter)"/>
+    </svg>
+
+</body>
+
+</html>
