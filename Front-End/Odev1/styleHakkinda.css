@@ -1,0 +1,30 @@
+h3{
+    color: darkblue;
+}
+p{
+    display: inline-block
+}
+
+.pHakkinda{
+color: blue;
+
+}
+.pIcerigi{
+    color: red;
+font-style: italic;
+}
+.divC{
+    background-color: rgb(167, 10, 10);
+}
+.indxHtml{
+    color: cyan;
+    background-color: black;
+    font-size: 300%;
+}
+.pDenSonraA{
+    background-color: yellow;
+    color: aqua;
+    font-size: 3em;
+    padding: 0%;
+    margin-bottom: 1%;
+}
