@@ -1,0 +1,21 @@
+body{
+    border-color: green;
+    border-style: solid;
+    border-radius: 7%;
+    background: black;
+    color: greenyellow;            
+}
+p{
+    border:solid blue;
+}
+h4{
+    border : solid cyan;
+}
+
+p.ata{
+    border:solid red;  
+    color: cyan; 
+}
+h4.ata{    
+    color: white;
+}
