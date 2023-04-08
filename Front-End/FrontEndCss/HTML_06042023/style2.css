@@ -1,0 +1,44 @@
+.tablo1class{
+    border-collapse: collapse;
+    border: solid 1px;
+    width: 100%;
+}
+.tablo1class tr{
+    text-align: center;
+    background-color: gray;
+    color: rgb(255, 0, 191);
+}
+.tablo1class th{
+    border-style: none;
+    text-align: center;
+    padding: 30px;
+    background-color: antiquewhite;
+    color: purple;
+}
+
+#tablo2{
+    background-color: black;
+    border: none;
+    border-collapse: inherit;
+    text-align: center;
+    width: 100%;
+}
+#tablo2 th{
+    background-color: darkblue;
+    color: white;
+    border-style: none;
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+#tablo2 tr:nth-child(odd){
+    background-color: aqua;
+}
+#tablo2 tr:nth-child(even){
+    background-color: white;
+}
+
+#tablo2 tr:hover{
+    background-color: darkblue;
+}
+

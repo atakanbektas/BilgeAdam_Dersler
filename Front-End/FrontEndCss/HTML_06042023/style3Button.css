@@ -1,0 +1,9 @@
+.MyButton{
+    width: 200px;
+    height: 50px;
+    
+}
+.myButton :active {
+    border-radius: 50%; /* tıklanınca yuvarlaklaştırılmış köşeler */
+    background-color: aqua;
+  }
