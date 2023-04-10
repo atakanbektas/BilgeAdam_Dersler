@@ -1,0 +1,21 @@
+.divMain{
+    background-color: rgb(221, 218, 218);
+    width: 100%;
+}
+button{
+    border-style: none;
+    background-color: rgb(221, 218, 218);
+    color: red;
+    text-transform: uppercase;
+    border-radius: 20px;
+    text-shadow: 0.5px 0.5px;
+}
+button:hover{
+    background-color: blueviolet;
+    cursor: pointer;    
+}
+div{
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+

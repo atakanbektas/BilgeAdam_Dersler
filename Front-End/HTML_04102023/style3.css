@@ -1,0 +1,25 @@
+.banner{
+    background-color: orange;
+    width: 100%;
+    
+}
+div{    
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+div a {
+
+ display: inline-flex;    
+ padding: 10px;    
+ text-decoration: none;    
+ color: black;    
+ margin-right: auto;
+ align-items: center;
+ justify-content: space-between;
+ flex-wrap: wrap;   
+ }
+
+.responsive{
+    color: red;
+}
