@@ -1,0 +1,24 @@
+body{
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
+div{
+    display: inline-block;
+}
+.div1{
+    width: 100%;
+    border: 3px solid red;
+    width: 500px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.div2{
+    display: inline-block;
+    border: 3px solid blue;
+    float: right;
+    height: 200px;
+}
+.egitim{    
+    padding-left: 150px;
+}
