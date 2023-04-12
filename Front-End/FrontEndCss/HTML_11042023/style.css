@@ -1,0 +1,23 @@
+body{
+    border: solid 2px red;
+}
+
+.main{
+    display: inline-flex;    
+    justify-content: space-around;
+}
+.main i{
+    background-color: red;
+    align-self: center;
+    font-size: 5em;
+    color: aliceblue;
+    justify-self: flex-start;
+}
+.main nav{
+    background-color: yellow;
+    font-size: 2em;    
+    justify-content: flex-end; 
+}
+nav{
+    justify-content: flex-end;
+}
