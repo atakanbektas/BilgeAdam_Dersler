@@ -1,0 +1,24 @@
+
+.head1{
+    display: flex;
+justify-content: space-around;
+border: 1px red solid;
+}
+
+.headLeft{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headLeft p{
+    opacity: 40%;
+    margin-bottom: 1.5em;
+}
+#menu{
+    margin-right: 60px;
+}
+.headCenter,.headRight{
+    display: flex;
+    align-items: center;
+    border: 1px red solid;
+}
