@@ -1,164 +1,140 @@
-
-.head1{
-    display: flex;
-justify-content: space-between;
-font-size: 1.2em;
+.head1 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
 }
 
-.headLeft{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.headLeft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.headLeft p{
-    opacity: 40%;
-    margin-bottom: 1.5em;
+.headLeft p {
+  opacity: 40%;
+  margin-bottom: 1.5em;
 }
-#menu{
-    margin-right: 60px;
+#menu {
+  margin-right: 60px;
 }
-.headCenter{
-    display: flex;
-    align-items: center;
+.headCenter {
+  display: flex;
+  align-items: center;
 }
-.headRight{
-    display: flex;
-    align-items: center;
-
+.headRight {
+  display: flex;
+  align-items: center;
 }
-.headRight i{
-    padding-left: 30px;
-
+.headRight i {
+  padding-left: 30px;
 }
-.textboxMic{
-    display: flex;
-    border-radius: 2em;
-    border: 1px hsl(0, 0%, 50%,0.3) solid ;
-    width: 800px;
-    height: 50px;
+.textboxMic {
+  display: flex;
+  border-radius: 2em;
+  border: 1px hsl(0, 0%, 50%, 0.3) solid;
+  width: 800px;
+  height: 50px;
 }
-.textboxMic button{
-    width: 10%;
-    border-radius: 2em;
-    background-color: transparent;
-    border: 1px hsl(0, 0%, 50%,0.3) solid ;
-
+.textboxMic button {
+  width: 10%;
+  border-radius: 2em;
+  background-color: transparent;
+  border: 1px hsl(0, 0%, 50%, 0.3) solid;
 }
-.foundInput{
-    border: none transparent 0px;
-    border-radius: 2em;
-    width: 90%;
-
+.foundInput {
+  border: none transparent 0px;
+  border-radius: 2em;
+  width: 90%;
 }
-.headCenter-i{
-    margin-left: 15px;
-
-
+.headCenter-i {
+  margin-left: 15px;
 }
-.allButton{
-    display: flex;
-    width: 100%;
-    align-content: center;
+.allButton {
+  display: flex;
+  width: 100%;
 }
 
-.firstBlockButton{    
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-content: space-around;
-
-
-    
+.firstBlockButton {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
 }
-.firstBlockButton button i{
-    display: flex;
-    align-content: center;
-    width: 20%;
-
-
-    
+.firstBlockButton button i {
+  display: flex;
+  width: 20%;
 }
 
-
-.firstBlockButton button{
-    display: flex;
-    width: 100%;
-    background-color: transparent;
-    border: none 0px transparent;
-    font-size: 2em;
-    padding-top: 30px;
-    border-radius: 2em;    
-    transition: color 1s;
-    transition: background 1s;
-
-
+.firstBlockButton button {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  border: none 0px transparent;
+  font-size: 2em;
+  padding-top: 30px;
+  border-radius: 2em;
+  transition: color 1s;
+  transition: background 1s;
 }
 
-.firstBlockButton button:hover{
-    background-color: hsla(0, 0%, 0%, 0.6);
-    color: white;
+.firstBlockButton button:hover {
+  background-color: hsla(0, 0%, 0%, 0.6);
+  color: white;
 }
-hr{
-    width: 20%;
-    margin-top: 50px;    
-}
-
-.rightVideo{
-    display: flex;
-    width: 75%;
-    flex-direction: column-reverse;
-}
-.test{
-    display: flex;
-    justify-content: space-between;
-}
-.rightButtons{
-    display: flex;
-    height: 10%;
-    width: 100%;
-    margin-bottom: 110px;
-}
-.rightButtons button{
-    background-color: hsl(0, 0%, 50%, 0.1);
-    font-size: 1.5em;
-    border-radius: 10px;
-    margin-right: 20px;
-    height: 100%;
-    transition: color 1s;
-    transition: background 1s;
-
-
-}
-.pictVideo{
-    display: flex;
-    height: 96%;
-    width: 100%;
-
-}
-.video1{
-    width: 24%;
-    padding-right: 1%;
-}
-.pictVideo img{
-    width: 100%;
-    border-radius: 10%;
-    transition: opacity 2s;
-
-}
-.pictVideo p{
-    font-size: 1.5em;
-    font-family:  sans-serif;
-}
-.pictVideo p>i{
-    color: hsl(0, 0%, 0% , 0.4);
+hr {
+  width: 20%;
+  margin-top: 50px;
 }
 
-.rightButtons button:hover{
-    background-color: hsl(0, 0%, 0%);
-    color: white;    
+.rightVideo {
+  display: flex;
+  width: 75%;
+  flex-direction: column-reverse;
 }
-.pictVideo img:hover{
-    opacity: 0.5;
-    width: 95%;
+.test {
+  display: flex;
+  justify-content: space-between;
+}
+.rightButtons {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  margin-bottom: 110px;
+}
+.rightButtons button {
+  background-color: hsl(0, 0%, 50%, 0.1);
+  font-size: 1.5em;
+  border-radius: 10px;
+  margin-right: 20px;
+  height: 100%;
+  transition: color 1s;
+  transition: background 1s;
+}
+.pictVideo {
+  display: flex;
+  height: 96%;
+  width: 100%;
+}
+.video1 {
+  width: 24%;
+  padding-right: 1%;
+}
+.pictVideo img {
+  width: 100%;
+  border-radius: 10%;
+  transition: opacity 2s;
+}
+.pictVideo p {
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+.pictVideo p > i {
+  color: hsl(0, 0%, 0%, 0.4);
 }
 
+.rightButtons button:hover {
+  background-color: hsl(0, 0%, 0%);
+  color: white;
+}
+.pictVideo img:hover {
+  opacity: 0.5;
+  width: 95%;
+}
