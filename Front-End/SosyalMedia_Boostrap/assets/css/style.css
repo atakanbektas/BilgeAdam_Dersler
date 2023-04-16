@@ -1,0 +1,4 @@
+#navbarNavDropdown > ul.navbar-nav.me-auto > li > a:hover{
+    background-color: black;
+    color:white;
+}
