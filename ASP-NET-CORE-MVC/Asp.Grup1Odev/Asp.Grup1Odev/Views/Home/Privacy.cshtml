@@ -1,0 +1,45 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Personeller Listesi";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+@{
+    <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Adı</th>
+                    <th>Soyadı</th>
+                    <th>Arabalar</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="table-active"> ... </tr>
+                <tr>
+                </tr>
+                @for (int i = 0; i < 18; i += 3)
+            {
+                    <tr>
+                        <td>
+                            @Model[i]
+                        </td>
+                        <td>
+                            @Model[i+1]
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-primary">
+                            <a href="@Model[i+2]" class="text-white">Arabaları Listele</a>
+                            </button>
+                        </td>
+                    </tr>
+            }
+            </tbody>
+    </table>
+
+
+}
+

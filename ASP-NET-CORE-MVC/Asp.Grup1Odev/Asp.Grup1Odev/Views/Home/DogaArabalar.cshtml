@@ -1,0 +1,38 @@
+﻿@model List<string>
+
+@{
+    <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Marka</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr class="table-active"> ... </tr>
+                    <tr>
+                    </tr>
+
+                    
+
+                        @for (int i=0; i<6;i+=2)
+                        {
+                            <tr>
+                            <td> 
+                                 @Model[i]
+                            </td>
+                            <td>
+                                 @Model[i+1]
+                            </td>
+
+                            </tr>
+                            
+                        }
+
+                   
+                </tbody>
+    </table>
+
+
+}
