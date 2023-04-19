@@ -1,0 +1,36 @@
+﻿@model string
+@{
+    char[] unluler = { 'a', 'e', 'ı', 'i', 'o', 'ö', 'u', 'ü' };
+    int unlusayisi = 0;
+
+    foreach (char harf in Model)
+    {
+        if (Array.IndexOf(unluler, char.ToLower(harf)) != -1)
+        {
+            unlusayisi++;
+        }
+    }
+
+    if (unlusayisi == 0)
+    {
+        <h1>Büyük Ünlü Uyumuna Uymaz</h1>
+    }
+    foreach (char unluharf in unluler)
+    {
+        if (unluharf == 'a' || unluharf == 'e' || unluharf == 'ı' || unluharf == 'i')
+        {
+            if (Model.Contains(char.ToUpper(unluharf)))
+            {
+                <h1>Büyük Ünlü Uyumuna Uyar</h1>
+            }
+        }
+        else
+        {
+            if (Model.Contains(unluharf))
+            {
+                <h1>Büyük Ünlü Uyumuna Uyar</h1>
+            }
+        }
+    }
+    <h1>Büyük Ünlü Uyumuna Uymaz</h1>
+}

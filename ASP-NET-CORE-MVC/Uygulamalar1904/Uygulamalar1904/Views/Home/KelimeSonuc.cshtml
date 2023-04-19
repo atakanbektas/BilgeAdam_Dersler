@@ -1,0 +1,35 @@
+﻿@model string
+@{
+    char[] ince = { 'e','i', 'ö','ü' };
+    char[] kalin = { 'a', 'ı', 'o', 'u' };
+    bool inceMi = false;
+    bool kalinMi = false;
+
+    foreach(var item in Model)
+    {
+        if(ince.Contains(item))
+        {
+            inceMi = true;
+        }
+        else if(kalin.Contains(item))
+        {
+            kalinMi = true;
+        }
+    }
+
+    if(kalinMi && inceMi)
+    {
+        <h1>Büyük ünlü uyumuna uymaz</h1>
+    }
+    else
+    {
+        <h1>Büyük ünlü uyumuna uyar</h1>
+    }
+
+
+    //<h1>Büyük Ünlü Uyumuna Uymaz</h1>
+
+
+
+
+}
