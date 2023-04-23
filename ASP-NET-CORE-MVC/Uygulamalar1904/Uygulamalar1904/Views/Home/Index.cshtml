@@ -1,0 +1,33 @@
+﻿@model List<int>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<table class="table">
+    @{
+        foreach (var sayi in Model)
+        {
+            if (sayi % 3 == 1)
+            {
+                <tr class="bg-warning">
+                    <td>
+                        @sayi
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr class="bg-dark text-white">
+                    <td>
+                        @sayi
+                    </td>
+                </tr>
+            }
+        }
+    }
+</table>
+
+
+
