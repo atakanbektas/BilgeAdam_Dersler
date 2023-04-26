@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebExampleTable.Models.Araba>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArabaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ucret)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArabaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ucret)
+                </td>
+                <td>
+                    @* @Html.ActionLink("Edit", "Edit", new {  id=item.ArabaId  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.ArabaId  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.ArabaId  })*@
+
+                    <a asp-action="Update" asp-route-id="@item.ArabaId" class="btn btn-warning btn-opacity-50">Update</a>
+                    <a asp-action="Delete" asp-route-id="@item.ArabaId" class="btn btn-danger btn-opacity-50">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
