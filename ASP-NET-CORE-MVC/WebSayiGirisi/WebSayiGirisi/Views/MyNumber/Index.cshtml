@@ -1,0 +1,29 @@
+﻿@model MyNumber
+
+@{
+    ViewData["Title"] = "Compare Number";
+}
+
+<form asp-controller="MyNumber" asp-action="Index" class="bg-gradient bg-dark bg-opacity-10 card-group">
+    <div class=" mb-3 card-body">
+        <label for="input1" class="form-label ">LowerBound</label>
+        <input type="number" asp-for="LowerNumber" class="form-control" id="input1">
+    </div>
+    <div class="mb-3 card-body">
+        <label for="input2" class="form-label">UpperBound</label>
+        <input type="number" asp-for="UpperNumber" class="form-control" id="input2">
+    </div>
+    <button type="submit" class="btn btn-primary card-body">Hesapla</button>
+</form>
+
+@{
+    if (@ViewBag.msg != null)
+    {
+        <div class="alert-info mt-3"> @ViewBag.msg </div>
+    }
+    else if (@ViewBag.msg == null && @ViewBag.diff > 0)
+    {
+        <div class="alert-info mt-3"> Fark = @ViewBag.diff </div>
+    }
+}
+
