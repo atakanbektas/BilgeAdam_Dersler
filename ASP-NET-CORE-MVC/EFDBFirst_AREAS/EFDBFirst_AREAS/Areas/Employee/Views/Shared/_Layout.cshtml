@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+    <title>@(ViewBag.Title ?? "Başlık Yok")</title>
+</head>
+
+<body>
+    <nav >
+        <ul>
+            <li>
+                <a  asp-area="Employee" asp-controller="Home" asp-action="About">Employee</a>
+            </li>
+            <li>
+                <a asp-area="Manager" asp-controller="Home" asp-action="Index" >Manager</a>
+            </li>
+        </ul>
+    </nav>
+
+    @RenderBody()
+</body>
+
+
+</html>
