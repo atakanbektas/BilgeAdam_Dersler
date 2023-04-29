@@ -1,0 +1,53 @@
+﻿@model Kisi
+
+<form asp-controller="Kisi" asp-action="Index" method="post">
+    <div class="text-danger">
+        <label class="text-black-50">Ad</label>
+        <input type="text" asp-for="Ad" class="form-control form-control-lg" />
+        <span asp-validation-for="Ad" asp-for="Ad" class="text-danger"></span>
+    </div>
+
+    
+
+    <div class="text-danger">
+        <label class="text-black-50">Email</label>
+        <input type="email" asp-for="Mail" class="form-control form-control-lg" />
+        <span asp-validation-for="Mail" class="text-danger"></span>
+    </div>
+
+    <div class="text-danger">
+        <label class="text-black-50">KodNo</label>
+        <input type="number" asp-for="KodNo" class="form-control form-control-lg" />
+        <span asp-validation-for="KodNo" class="text-danger"></span>
+    </div>
+
+    <div class="text-danger">
+        <label class="text-black-50">Age</label>
+        <input type="number" asp-for="Age" class="form-control form-control-lg" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="text-danger">
+        <label class="text-black-50">TcKimlikNo</label>
+        <input type="text" asp-for="TcKimlikNo" class="form-control form-control-lg" />
+        <span asp-validation-for="TcKimlikNo" class="text-danger"></span>
+    </div>
+
+    <div class="text-danger">
+        <label class="text-black-50">Sifre</label>
+        <input type="text" asp-for="Sifre" class="form-control form-control-lg" />
+        <span asp-validation-for="Sifre" class="text-danger"></span>
+    </div>
+
+    <div class="text-danger">
+        <label class="text-black-50">SifreTekrar</label>
+        <input type="text" asp-for="SifreTekrar" class="form-control form-control-lg" />
+        <span asp-validation-for="SifreTekrar" class="text-danger"></span>
+    </div>
+
+
+    <button class="btn btn-success justify-items-center" type="submit"> Gönder </button>
+
+</form>
+
+
