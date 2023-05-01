@@ -4,6 +4,10 @@ namespace Animal_Crud_Mvc.Models
 {
     public class Hayvan
     {
+        public Hayvan()
+        {
+
+        }
         public Hayvan(string ad)
         {
             Ad = ad;
@@ -11,7 +15,7 @@ namespace Animal_Crud_Mvc.Models
         public int Id { get; set; }
 
         #region AdAttribute
-        [Required]
+        [Required(ErrorMessage = "Bu alan boş bırakılamaz!")]
         [MaxLength(50, ErrorMessage = "En fazla 50 karakter girmelisiniz!")]
         [MinLength(2, ErrorMessage = "En az 2 karakter girmelisiniz!")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Ad sadece harf ve boşluk karakterleri içerebilir.")]

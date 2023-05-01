@@ -2,23 +2,29 @@
 
 
 
+  <div class="m-3">
+        <a asp-controller="Hayvan" asp-action="Add" type="button" class="btn btn-outline-success rounded text-dark">Hayvan ekle</a>
+  </div>
+
 
 <div class="row container-fluid">
     @{
         foreach (var item in Model)
         {
-            <div class="card col-md-3 shadow" style="width: 18rem;">
+            <div class="card col-md-3 rounded m-5 shadow-lg">
                 <img src="~/pictures/@item.ResimYolu" class="card-img-top" alt="image">
-                <div class="card-body shadow">
+                <div class="card-body ">
                     <h5 class="card-title ">@item.Ad</h5>
                     <p class="card-text ">@item.Aciklama</p>
                     <div >
-                        <a href="#" class="btn btn-danger shadow ">Sil</a>
-                        <a href="#" class="btn btn-warning shadow">Güncelle</a>
+                        <a href="/Hayvan/Delete/@item.Id" class="btn btn-danger shadow ">Sil</a>
+                        <a href="/Hayvan/Edit/@item.Id" class="btn btn-warning shadow">Güncelle</a>
                     </div>
                 </div>
             </div>
         }
     }
 </div>
+
+
 
