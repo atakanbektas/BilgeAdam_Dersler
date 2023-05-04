@@ -4,7 +4,7 @@
 
 namespace MVCCategoriesandProductsSQL.Migrations
 {
-    public partial class migv1 : Migration
+    public partial class v100 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,8 @@ namespace MVCCategoriesandProductsSQL.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     IsInStock = table.Column<bool>(type: "bit", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Photopath = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,15 +61,15 @@ namespace MVCCategoriesandProductsSQL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "IsInStock", "Name", "Price" },
+                columns: new[] { "Id", "CategoryId", "IsInStock", "Name", "Photopath", "Price" },
                 values: new object[,]
                 {
-                    { 1, 2, true, "Hp", 30000m },
-                    { 2, 2, true, "MacBook", 50000m },
-                    { 3, 1, true, "Apple", 20000m },
-                    { 4, 1, true, "Xiaomi", 12000m },
-                    { 5, 3, true, "Samsung", 27500m },
-                    { 6, 3, true, "Vestel", 32700m }
+                    { 1, 2, true, "Hp", "//img/phone.png", 30000m },
+                    { 2, 2, true, "MacBook", "//img/phone.png", 50000m },
+                    { 3, 1, true, "Apple", "//img/tv.png", 20000m },
+                    { 4, 1, true, "Xiaomi", "//img/phone.png", 12000m },
+                    { 5, 3, true, "Samsung", "//img/phone.png", 27500m },
+                    { 6, 3, true, "Vestel", "//img/tv.png", 32700m }
                 });
 
             migrationBuilder.CreateIndex(

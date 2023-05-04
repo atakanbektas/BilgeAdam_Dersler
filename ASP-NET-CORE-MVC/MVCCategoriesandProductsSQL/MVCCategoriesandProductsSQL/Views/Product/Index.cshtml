@@ -10,6 +10,8 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -32,29 +34,26 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsInStock)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa-sharp fa-solid fa-circle-info"></i></a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        @foreach (var item in Model)
+        {
+            <div class="card text-center d-inline-block m-3 p-2 " style="width:18rem;">
+            <div>
+                <div class="text-center" style="height: 300px;" >
+                    <img class="card-img-top  rounded w-75" src="~/img/@item.Photopath" alt="Card image cap" ;>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">Fiyat=@item.Price</p>
+                    <p class="card-text text-danger"> @(item.IsInStock ? "" : "Stokta yok")</p>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning">Details</a>
+                </div>
+            </div>
+           
+                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa-sharp fa-solid fa-circle-info"></i></a>
+
+        </div>
+                }
+        </tbody>
+    </table>

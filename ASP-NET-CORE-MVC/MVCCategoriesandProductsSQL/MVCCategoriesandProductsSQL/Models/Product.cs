@@ -7,6 +7,7 @@
         public decimal Price { get; set; }
         public bool IsInStock { get; set; }
         public int CategoryId { get; set; }
+        public string Photopath { get; set; }
         public Category Category { get; set; }
 
         public Product(int id, string name, decimal price, bool ısInStock)

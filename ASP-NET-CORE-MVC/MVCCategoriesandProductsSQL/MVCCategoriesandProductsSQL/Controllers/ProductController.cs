@@ -23,19 +23,27 @@ namespace MVCCategoriesandProductsSQL.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Product product)
+        public async Task<IActionResult> Create(Product product, IFormFile Photopath)
         {
-
-            //if (ModelState.IsValid)
-            //{
+            if (Photopath != null && Photopath.Length > 0)
+            {
+                var fileName = Path.GetFileName(Photopath.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\", fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Photopath.CopyToAsync(stream);
+                }
+                product.Photopath = fileName;
+            }
+            else
+            {
+                product.Photopath = "tv.png";
+            }
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
-            //}
-            //else
-            //{
-            //    return View(product);
-            //}
+
+
         }
         public async Task<IActionResult> Delete(int id)
         {
@@ -51,8 +59,18 @@ namespace MVCCategoriesandProductsSQL.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(Product product)
+        public async Task<IActionResult> Update(Product product, IFormFile Photopath2)
         {
+            if (Photopath2 != null && Photopath2.Length > 0)
+            {
+                var fileName = Path.GetFileName(Photopath2.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\", fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Photopath2.CopyToAsync(stream);
+                }
+                product.Photopath = fileName;
+            }
 
             //if (ModelState.IsValid)
             //{

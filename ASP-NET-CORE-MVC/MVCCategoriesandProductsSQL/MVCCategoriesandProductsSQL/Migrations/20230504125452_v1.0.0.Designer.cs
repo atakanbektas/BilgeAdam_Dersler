@@ -3,6 +3,7 @@ using MVCCategoriesandProductsSQL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCCategoriesandProductsSQL.Migrations
 {
     [DbContext(typeof(ProductsContext))]
-    partial class ProductsContextModelSnapshot : ModelSnapshot
+    [Migration("20230504125452_v1.0.0")]
+    partial class v100
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,7 +95,7 @@ namespace MVCCategoriesandProductsSQL.Migrations
                             CategoryId = 2,
                             IsInStock = true,
                             Name = "Hp",
-                            Photopath = "phone.png",
+                            Photopath = "//img/phone.png",
                             Price = 30000m
                         },
                         new
@@ -102,7 +104,7 @@ namespace MVCCategoriesandProductsSQL.Migrations
                             CategoryId = 2,
                             IsInStock = true,
                             Name = "MacBook",
-                            Photopath = "phone.png",
+                            Photopath = "//img/phone.png",
                             Price = 50000m
                         },
                         new
@@ -111,7 +113,7 @@ namespace MVCCategoriesandProductsSQL.Migrations
                             CategoryId = 1,
                             IsInStock = true,
                             Name = "Apple",
-                            Photopath = "tv.png",
+                            Photopath = "//img/tv.png",
                             Price = 20000m
                         },
                         new
@@ -120,7 +122,7 @@ namespace MVCCategoriesandProductsSQL.Migrations
                             CategoryId = 1,
                             IsInStock = true,
                             Name = "Xiaomi",
-                            Photopath = "phone.png",
+                            Photopath = "//img/phone.png",
                             Price = 12000m
                         },
                         new
@@ -129,7 +131,7 @@ namespace MVCCategoriesandProductsSQL.Migrations
                             CategoryId = 3,
                             IsInStock = true,
                             Name = "Samsung",
-                            Photopath = "phone.png",
+                            Photopath = "//img/phone.png",
                             Price = 27500m
                         },
                         new
@@ -138,7 +140,7 @@ namespace MVCCategoriesandProductsSQL.Migrations
                             CategoryId = 3,
                             IsInStock = true,
                             Name = "Vestel",
-                            Photopath = "tv.png",
+                            Photopath = "//img/tv.png",
                             Price = 32700m
                         });
                 });
