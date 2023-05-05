@@ -1,7 +1,12 @@
+using Identity_Token.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<NorthwindContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("NortwindConnectionString")));
+
 
 var app = builder.Build();
 
