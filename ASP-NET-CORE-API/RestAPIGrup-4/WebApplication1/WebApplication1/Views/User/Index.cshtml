@@ -1,0 +1,68 @@
+﻿
+
+<form id="KullanıcıBilgileri">
+    <button>bilgileri getir</button>
+</form>
+@*<div id="Id"></div>
+<div id="Name"></div>
+<div id="Email"></div>*@
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+                ID
+            </th>
+			<th>
+                NAME
+            </th>
+			<th>
+                EMAİL
+            </th>
+        </tr>
+    </thead>
+	<tbody>
+    </tbody>
+</table>
+
+
+<script>
+    const KullanıcıBilgileri = document.getElementById("KullanıcıBilgileri");
+
+    KullanıcıBilgileri.onsubmit = function (ev) {
+        ev.preventDefault();
+        KullanıcıBilgileriGetir();
+      };
+
+    function KullanıcıBilgileriGetir() {
+        const endpointURL = `https://jsonplaceholder.typicode.com/users`;
+        fetch(endpointURL)
+          .then((res) => res.json())
+          .then((data) => KullanıcıGoster(data));
+      }
+
+    function KullanıcıGoster(data) {
+        const tbody = document.querySelector("tbody");
+        tbody.innerHTML = ""; // Önceki verileri temizle
+
+        data.forEach((user) => {
+            const row = document.createElement("tr");
+
+            const idCell = document.createElement("td");
+            idCell.textContent = user.id;
+            row.appendChild(idCell);
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = user.name;
+            row.appendChild(nameCell);
+
+            const emailCell = document.createElement("td");
+            emailCell.textContent = user.email;
+            row.appendChild(emailCell);
+
+            tbody.appendChild(row);
+        });
+    }
+
+      
+    </script>
